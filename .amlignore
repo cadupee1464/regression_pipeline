@@ -1,0 +1,17 @@
+azure-cli-env311/
+.venv/
+venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.git/
+.gitignore
+data/
+outputs/
+logs/
+mlruns/
+*.parquet
+*.csv
+*.xlsx
+*.duckdb
+*.pbix
