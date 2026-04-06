@@ -1,0 +1,15 @@
+name: aml-ridge-env
+
+channels:
+    - conda-forge
+
+dependencies:
+    - python=3.11
+    - pip
+    - numpy
+    - pandas=2.3.*
+    - scikit-learn>=1.4.2
+
+    - pip:
+        - mlflow==3.10.*
+        - azureml-mlflow

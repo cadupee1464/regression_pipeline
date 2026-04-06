@@ -1,0 +1,9 @@
+$schema: https://azuremlschemas.azureedge.net/latest/managedOnlineDeployment.schema.json
+
+name: random-forest-deployment
+endpoint_name: regression-endpoint
+model: azureml:random_forest_portfolio_model:latest
+
+instance_type: Standard_DS1_v2
+instance_count: 1
+

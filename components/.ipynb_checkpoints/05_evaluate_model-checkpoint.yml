@@ -1,0 +1,38 @@
+$schema: https://azuremlschemas.azureedge.net/latest/commandComponent.schema.json
+
+name: evaluate_model
+display_name: Evaluate Ridge Model
+version: 1
+
+type: command
+
+inputs:
+  test_data:
+    type: uri_file
+  target_column:
+    type: string
+  model_path:
+    type: uri_file
+  experiment_name:
+    type: string
+  run_name:
+    type: string
+
+outputs:
+  output_directory:
+    type: uri_folder
+
+code: ../src/evaluate
+
+environment:
+  image: mcr.microsoft.com/azureml/openmpi4.1.0-ubuntu20.04
+  conda_file: ../env/conda.yml
+
+command: >
+  python 05_evaluate_model.py
+  --test_data ${{inputs.test_data}}
+  --target_column "${{inputs.target_column}}"
+  --model_path ${{inputs.model_path}}
+  --experiment_name "${{inputs.experiment_name}}"
+  --run_name "${{inputs.run_name}}"
+  --output_directory ${{outputs.output_directory}}

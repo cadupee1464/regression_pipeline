@@ -1,0 +1,54 @@
+$schema: https://azuremlschemas.azureedge.net/latest/commandComponent.schema.json
+
+name: training
+display_name: Training
+version: 1
+
+type: command
+
+inputs:
+  train_data:
+    type: uri_file
+  val_data:
+    type: uri_file
+  target_column:
+    type: string
+  model_name:
+    type: string
+  experiment_name:
+    type: string
+  run_name:
+    type: string
+  scoring:
+    type: string
+  cv:
+    type: integer
+  n_jobs:
+    type: integer
+  
+
+outputs:
+  output_directory:
+    type: uri_folder
+  model_output:
+    type: mlflow_model
+
+code: ../src/train
+
+environment:
+  image: mcr.microsoft.com/azureml/openmpi4.1.0-ubuntu20.04
+  conda_file: ../env/conda.yml
+
+command: >
+  python 04_train.py
+  --train_data ${{inputs.train_data}}
+  --val_data ${{inputs.val_data}}
+  --target_column "${{inputs.target_column}}"
+  --experiment_name "${{inputs.experiment_name}}"
+  --run_name "${{inputs.run_name}}"
+  --scoring "${{inputs.scoring}}"
+  --cv ${{inputs.cv}}
+  --n_jobs ${{inputs.n_jobs}}
+  --output_directory ${{outputs.output_directory}}
+  --model_output ${{outputs.model_output}}
+  --model_name ${{inputs.model_name}}

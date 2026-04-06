@@ -1,0 +1,33 @@
+$schema: https://azuremlschemas.azureedge.net/latest/commandComponent.schema.json
+
+name: split_data
+display_name: Train, Validate, & Test Split
+version: 1
+
+type: command
+
+inputs:
+  input_filename:
+    type: uri_file
+
+outputs:
+  train_output:
+    type: uri_file
+  val_output:
+    type: uri_file
+  test_output:
+    type: uri_file
+
+code: ../src/split
+
+environment:
+  image: mcr.microsoft.com/azureml/openmpi4.1.0-ubuntu20.04
+  conda_file: ../env/conda.yml
+
+command: >
+  python 02_split_data.py
+  --input_filename ${{inputs.input_filename}}
+  --train_output ${{outputs.train_output}}
+  --val_output ${{outputs.val_output}}
+  --test_output ${{outputs.test_output}}
+  

@@ -1,0 +1,38 @@
+$schema: https://azuremlschemas.azureedge.net/latest/commandComponent.schema.json
+
+name: dummy_baseline
+display_name: Baseline Model
+version: 1
+
+type: command
+
+inputs:
+  train_data:
+    type: uri_file
+  val_data:
+    type: uri_file
+  target_column:
+    type: string
+  experiment_name:
+    type: string
+  run_name:
+    type: string
+
+outputs:
+  output_directory:
+    type: uri_folder
+
+code: ../src/dummy
+
+environment:
+  image: mcr.microsoft.com/azureml/openmpi4.1.0-ubuntu20.04
+  conda_file: ../env/conda.yml
+
+command: >
+  python 03_dummy_baseline.py
+  --train_data ${{inputs.train_data}}
+  --val_data ${{inputs.val_data}}
+  --target_column "${{inputs.target_column}}"
+  --experiment_name "${{inputs.experiment_name}}"
+  --run_name "${{inputs.run_name}}"
+  --output_directory ${{outputs.output_directory}}

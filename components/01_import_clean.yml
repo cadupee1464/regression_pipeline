@@ -1,0 +1,26 @@
+$schema: https://azuremlschemas.azureedge.net/latest/commandComponent.schema.json
+
+name: import_clean
+display_name: Import & Clean
+version: 1
+
+type: command
+
+inputs:
+  input_filename:
+    type: uri_file
+
+outputs:
+  output_filename:
+    type: uri_file
+
+code: ../src/import
+
+environment:
+  image: mcr.microsoft.com/azureml/openmpi4.1.0-ubuntu20.04
+  conda_file: ../env/conda.yml
+
+command: >
+  python 01_import_clean.py
+  --input_filename ${{inputs.input_filename}}
+  --output_filename ${{outputs.output_filename}}
