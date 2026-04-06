@@ -1,0 +1,78 @@
+# Python
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# Environments
+.venv/
+venv/
+
+# Data (ignore large/raw)
+data/raw/
+data/processed/
+
+# Model artifacts
+*.pkl
+*.joblib
+
+# MLflow
+mlruns/
+
+# Azure / secrets
+.azure/
+config.json
+.env
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+
+# IDE
+.vscode/
+.idea/.venv
+# Byte-compiled / cache
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Python
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# Environments
+.venv/
+venv/
+
+# Model artifacts
+*.pkl
+*.joblib
+
+# MLflow
+mlruns/
+
+# Azure / secrets
+.azure/
+config.json
+.env
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
