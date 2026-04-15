@@ -1,9 +1,9 @@
 # regression_readme
 
 
-# 📊 Azure ML Regression Pipeline: Student Performance Prediction
+# Azure ML Regression Pipeline: Student Performance Prediction
 
-## 🔍 Overview
+## Overview
 
 This project implements a fully reproducible, cloud-based machine
 learning pipeline designed to predict **ELA summative exam scores**
@@ -14,7 +14,7 @@ Built with the **Azure Machine Learning SDK**, the pipeline emphasizes
 evaluation**—demonstrating production-oriented machine learning
 practices.
 
-## ⚡ Highlights
+## Highlights
 
 - Azure ML SDK pipeline (component-based)
 - GridSearchCV multi-model training
@@ -24,7 +24,7 @@ practices.
 
 ------------------------------------------------------------------------
 
-## 🎯 Business Problem
+## Business Problem
 
 Educational institutions need to **identify at-risk students and schools
 early** in order to allocate intervention resources effectively.
@@ -38,7 +38,7 @@ This project enables:
 
 ------------------------------------------------------------------------
 
-## 🧠 Solution Summary
+## Solution Summary
 
 - Constructs an **end-to-end regression pipeline** in Azure ML
 - Supports **multiple model types** within a single experiment framework
@@ -47,7 +47,7 @@ This project enables:
 
 ------------------------------------------------------------------------
 
-## 🗂️ Data
+## Data
 
 - Source: **Anonymized student testing dataset**
 
@@ -63,7 +63,7 @@ This project enables:
 
 ------------------------------------------------------------------------
 
-## ⚙️ Pipeline Architecture
+## Pipeline Architecture
 
 The pipeline is orchestrated using the Azure ML SDK and composed of
 modular components:
@@ -92,7 +92,7 @@ Each step is implemented as a **separate script component**, enabling:
 
 ------------------------------------------------------------------------
 
-## 🤖 Modeling Approach
+## Modeling Approach
 
 ### Models Evaluated
 
@@ -108,7 +108,7 @@ Each step is implemented as a **separate script component**, enabling:
 
 ------------------------------------------------------------------------
 
-## 📏 Evaluation Metrics
+## Evaluation Metrics
 
 Models are evaluated using:
 
@@ -124,7 +124,7 @@ Metrics are:
 
 ------------------------------------------------------------------------
 
-## ☁️ Azure ML Integration
+##️ Azure ML Integration
 
 ### Key Features
 
@@ -144,20 +144,20 @@ Metrics are:
 
 ------------------------------------------------------------------------
 
-## 📊 Outputs & Artifacts
+## Outputs & Artifacts
 
 The repository includes:
 
-- ✅ Full pipeline graph (Azure ML Studio)
-- ✅ Model comparison across multiple runs
-- ✅ Best estimator metrics (Random Forest)
-- ✅ JSON metric output files
-- ✅ Endpoint deployment configuration (YAML)
-- ✅ Screenshots of pipeline execution and results
+- Full pipeline graph (Azure ML Studio)
+- Model comparison across multiple runs
+- Best estimator metrics (Random Forest)
+- JSON metric output files
+- Endpoint deployment configuration (YAML)
+- Screenshots of pipeline execution and results
 
 ------------------------------------------------------------------------
 
-## 🧱 Project Structure
+## Project Structure
 
     ```
     regression_pipeline/
