@@ -1,6 +1,3 @@
-# regression_readme
-
-
 # Azure ML Regression Pipeline: Student Performance Prediction
 
 ## Overview
